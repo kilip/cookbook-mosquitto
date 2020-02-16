@@ -1,6 +1,6 @@
 require 'spec_helper.rb'
 
-describe 'mosquitto::_config' do
+describe 'mosquitto::default' do
   default_attributes['mosquitto'] = parse_data_bag('default')
 
   describe '~> create configuration' do
