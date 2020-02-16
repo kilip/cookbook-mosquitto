@@ -10,6 +10,7 @@ end
 
 unless node['mosquitto']['users'].empty?
   password_file = node['mosquitto']['password_file']
+
   file password_file do
     content 'content'
     owner 'root'
