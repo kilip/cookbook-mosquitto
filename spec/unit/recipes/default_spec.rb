@@ -7,6 +7,7 @@
 require 'spec_helper'
 
 describe 'mosquitto::default' do
+  default_attributes['mosquitto'] = parse_data_bag('default')
   context 'When all attributes are default, on Ubuntu 18.04' do
     # for a complete list of available platforms and versions see:
     # https://github.com/chefspec/fauxhai/blob/master/PLATFORMS.md

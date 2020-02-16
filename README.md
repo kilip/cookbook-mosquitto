@@ -1,4 +1,3 @@
-# mosquitto
+# Eclipse Mosquitto Cookbook
 
-TODO: Enter the cookbook description here.
 
