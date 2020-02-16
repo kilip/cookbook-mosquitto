@@ -2,11 +2,7 @@
   "path": "/etc/mosquitto",
   "allow_anonymous": "false",
   "password_file": "/etc/mosquitto/passwd",
-  "cafile": "/etc/mosquitto/certs/cafile.pem",
-  "certfile": "/etc/mosquitto/certs/certfile.pem",
-  "keyfile": "/etc/mosquitto/certs/keyfile.pem",
   "require_certificate": "false",
-  "tls_version": "tlsv2",
   "users": [
     {
       "username": "foo",
@@ -24,11 +20,16 @@
     },
     {
       "port": 8883,
-      "addr": "0.0.0.0"
+      "certfile": "/etc/mosquitto/certs/test.pem",
+      "keyfile": "/etc/mosquitto/certs/test.key",
+      "tls_version": "tlsv2"
     },
     {
       "port": 9001,
-      "protocol": "websockets"
+      "protocol": "websockets",
+      "certfile": "/etc/mosquitto/certs/test.pem",
+      "keyfile": "/etc/mosquitto/certs/test.key",
+      "tls_version": "tlsv2"
     }
   ]
 }

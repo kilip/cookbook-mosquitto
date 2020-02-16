@@ -5,6 +5,7 @@ template "#{config_path}/mosquitto.conf" do
   owner 'root'
   group 'root'
   mode '0755'
+  notifies :restart, 'service[mosquitto]'
 end
 
 unless node['mosquitto']['users'].empty?
@@ -15,7 +16,7 @@ unless node['mosquitto']['users'].empty?
     group 'root'
     mode '0755'
     action :create
-    not_if { ::File.exist?(password_file)}
+    not_if { ::File.exist?(password_file) }
   end
 
   node['mosquitto']['users'].each do |user|
