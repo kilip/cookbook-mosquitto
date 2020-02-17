@@ -8,6 +8,7 @@ describe 'mosquitto::_package' do
     }
     it {
       is_expected.to install_apt_package('mosquitto')
+      is_expected.to install_apt_package('mosquitto-clients')
     }
   end
 end

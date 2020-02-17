@@ -4,6 +4,8 @@ apt_repository 'mosquitto' do
   action :add
 end
 
-apt_package 'mosquitto' do
-  action :install
+%w(mosquitto mosquitto-clients).each do |pkg|
+  apt_package pkg do
+    action :install
+  end
 end

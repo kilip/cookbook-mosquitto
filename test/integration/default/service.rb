@@ -23,3 +23,18 @@ describe port(9001) do
   its('protocols') { should include 'tcp' }
   its('addresses') { should include '0.0.0.0' }
 end
+
+describe command('mosquitto_pub -h localhost -t "test" -m "hello world"') do
+  its('exit_status') { should eq 0 }
+  its('stderr') { should match /Connection Refused: not authorised./ }
+end
+
+describe command('mosquitto_pub -d  -u "foo" -P "bar" -h localhost -t "test" -m "hello world"') do
+  its('exit_status') { should eq 0 }
+  its('stdout') { should match /sending PUBLISH/ }
+end
+
+describe command('mosquitto_pub -d -u "foo" -P "bar" -h localhost -p 8883 -t "test" -m "hello world"') do
+  its('exit_status') { should eq 0 }
+  its('stdout') { should match /sending PUBLISH/ }
+end
