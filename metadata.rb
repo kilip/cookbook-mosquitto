@@ -6,6 +6,6 @@ description 'Configure Eclipse Mosquitto Server'
 chef_version '>= 14.0'
 issues_url 'https://github.com/kilip/cookbook-mosquitto/issues'
 source_url 'https://github.com/kilip/cookbook-mosquitto'
-version '0.1.1'
+version '0.1.2'
 
 supports 'ubuntu'
